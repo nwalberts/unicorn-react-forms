@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
 import UnicornFormContainer from './UnicornFormContainer';
-import UnicornMealsList from '../components/UnicornMealsList';
+import UnicornsList from '../components/UnicornsList';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      unicornMeals: []
+      unicorns: []
     }
-    this.trackConsumption = this.trackConsumption.bind(this);
+    this.trackNewUnicorn = this.trackNewUnicorn.bind(this);
   }
 
-  trackConsumption(unicorn){
-    let allMeals = this.state.unicornMeals
-    this.setState({ unicornMeals: allMeals.concat(unicorn) })
+  trackNewUnicorn(unicorn){
+    // debugger;
+    let allUnicorns = this.state.unicorns
+    this.setState({ unicorns: allUnicorns.concat(unicorn) })
   }
 
   render() {
     return (
       <div className="row">
         <div className="small-9 small-centered columns">
-          <h1 className="text-center">Unicorn Food Tracker</h1>
+          <h1 className="text-center">Unicorn Tracker</h1>
           <UnicornFormContainer
-            trackConsumption={this.trackConsumption}
+            trackNewUnicorn={this.trackNewUnicorn}
           />
-          <UnicornMealsList
-            unicornMeals={this.state.unicornMeals}
+          <UnicornsList
+            unicorns={this.state.unicorns}
           />
         </div>
       </div>

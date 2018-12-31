@@ -5,9 +5,9 @@ const TextField = (props) => {
   return(
     <input
       type="text"
-      name="unicornConsumed"
-      value={props.value}
-      onChange={props.consumedHandler}
+      name="unicornName"
+      value={props.content}
+      onChange={props.unicornHandler}
     />
   )
 }

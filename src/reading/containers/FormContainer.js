@@ -12,7 +12,7 @@ class FormContainer extends Component {
     }
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    // this.handleConsumedChange = this.handleConsumedChange.bind(this);
+    this.handleConsumedChange = this.handleConsumedChange.bind(this);
     this.handleMealSelection = this.handleMealSelection.bind(this);
   }
 
