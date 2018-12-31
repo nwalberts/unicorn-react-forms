@@ -6,16 +6,9 @@ class UnicornFormContainer extends Component {
     super(props);
     this.state = {
       unicornName: '',
-      unicorns: []
     }
-    this.trackNewUnicorn = this.trackNewUnicorn.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleUnicornChange = this.handleUnicornChange.bind(this);
-  }
-
-  trackNewUnicorn(unicorn){
-    let allMeals = this.state.unicornMeals
-    this.setState({ unicornMeals: allMeals.concat(unicorn) })
   }
 
   handleFormSubmit(event){
@@ -29,22 +22,10 @@ class UnicornFormContainer extends Component {
   }
 
   handleUnicornChange(event) {
-    // debugger;
     this.setState({ unicornName: event.target.value })
   }
 
   render() {
-    // debugger;
-    console.log(this.state)
-
-    let unicornArray = this.state.unicorns.map((unicorn) => {
-
-      return(
-        <li key={unicorn.unicornName}>
-          {unicorn.unicornName}
-        </li>
-      )
-    })
 
     return (
       <div>
@@ -60,7 +41,6 @@ class UnicornFormContainer extends Component {
           </div>
 
         </form>
-        {unicornArray}
       </div>
     );
   }
