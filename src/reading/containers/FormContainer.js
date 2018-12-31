@@ -10,19 +10,11 @@ class FormContainer extends Component {
       mealOptions: ['breakfast', 'lunch', 'dinner', 'snack'],
       mealSelected: ''
     }
-    this.handleClearForm = this.handleClearForm.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    // this.handleConsumedChange = this.handleConsumedChange.bind(this);
+    this.handleItemChange = this.handleItemChange.bind(this);
     this.handleMealSelection = this.handleMealSelection.bind(this);
   }
 
-  handleClearForm(event) {
-    event.preventDefault();
-    this.setState({
-      foodItemConsumed: '',
-      mealSelected: ''
-    })
-  }
 
   handleFormSubmit(event) {
     event.preventDefault();
@@ -34,7 +26,7 @@ class FormContainer extends Component {
       this.handleClearForm(event);
   }
 
-  handleConsumedChange(event) {
+  handleItemChange(event) {
     this.setState({ foodItemConsumed: event.target.value })
   }
 
@@ -49,7 +41,7 @@ class FormContainer extends Component {
           content={this.state.foodItemConsumed}
           label='Food Item Consumed'
           name='consumed'
-          handlerFunction={this.handleConsumedChange}
+          handlerFunction={this.handleItemChange}
         />
         <Select
           handlerFunction={this.handleMealSelection}
@@ -59,7 +51,6 @@ class FormContainer extends Component {
           selectedOption={this.state.mealSelected}
         />
         <div className="button-group">
-          <button className="button" onClick={this.handleClearForm}>Clear</button>
           <input className="button" type="submit" value="Submit" />
         </div>
       </form>
@@ -68,3 +59,14 @@ class FormContainer extends Component {
 }
 
 export default FormContainer;
+
+// <button className="button" onClick={this.handleClearForm}>Clear</button>
+
+// this.handleClearForm = this.handleClearForm.bind(this);
+// handleClearForm(event) {
+  //   event.preventDefault();
+  //   this.setState({
+    //     foodItemConsumed: '',
+    //     mealSelected: ''
+    //   })
+    // }

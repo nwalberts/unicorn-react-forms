@@ -1,13 +1,14 @@
 import React from 'react';
 
+import UnicornTile from "./UnicornTile"
+
 const UnicornMealsList = (props) => {
-  console.log(props)
-  let unicornArray = props.unicornMeals.map((unicorn) => {
+  let unicornArray = props.unicorns.map((unicorn) => {
 
     return(
-      <li>
-        {unicorn.unicornConsumed}
-      </li>
+      <UnicornTile
+        unicorn={unicorn}
+      />
     )
   })
 

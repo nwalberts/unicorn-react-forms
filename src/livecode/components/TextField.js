@@ -1,15 +1,15 @@
-import React from 'react'
-
-const TextField = (props) => {
-
-  return(
-    <input
-      type="text"
-      name="unicornConsumed"
-      value={props.value}
-      onChange={props.consumedHandler}
-    />
-  )
-}
-
-export default TextField
+// import React from 'react'
+//
+// const TextField = (props) => {
+//
+//   return(
+//     <input
+//       name="unicornName"
+//       type="text"
+//       value={props.content}
+//       onChange={props.handleUnicornChange}
+//     />
+//   )
+// }
+//
+// export default TextField

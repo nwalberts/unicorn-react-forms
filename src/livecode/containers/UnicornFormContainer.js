@@ -1,69 +1,52 @@
 import React, { Component } from 'react';
-import TextField from '../components/TextField';
+// import TextField from '../components/TextField';
 
 class UnicornFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      unicornConsumed: '',
-      unicornMeals: []
+      unicornName: '',
     }
-    this.trackConsumption = this.trackConsumption.bind(this)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleUnicornConsumedChange = this.handleUnicornConsumedChange.bind(this);
+    // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    // this.handleUnicornChange = this.handleUnicornChange.bind(this);
   }
 
-  trackConsumption(unicorn){
-    let allMeals = this.state.unicornMeals
-    this.setState({ unicornMeals: allMeals.concat(unicorn) })
-  }
-
-  handleFormSubmit(event){
-    event.preventDefault()
-
-    let unicornPayload = {
-      unicornConsumed: this.state.unicornConsumed
-    }
-
-    this.trackConsumption(unicornPayload)
-  }
-
-  handleUnicornConsumedChange(event) {
-    // debugger;
-    this.setState({ unicornConsumed: event.target.value })
-  }
 
   render() {
-    // debugger;
-    console.log(this.state)
-
-    let unicornArray = this.state.unicornMeals.map((unicorn) => {
-
-      return(
-        <li key={unicorn.unicornConsumed}>
-          {unicorn.unicornConsumed}
-        </li>
-      )
-    })
 
     return (
       <div>
-        <form className="callout" onSubmit={this.handleFormSubmit}>
-          How bad of a person are you? Do you really want to eat Unicorn?
-          <TextField
-            content={this.state.unicornConsumed}
-            consumedHandler={this.handleUnicornConsumedChange}
+        <form className="callout" >
+          <input
+            type="text"
+            name="unicornName"
+            // value=""
           />
-
           <div className="button-group">
             <input className="button" type="submit" value="Submit" />
           </div>
 
         </form>
-        {unicornArray}
       </div>
     );
   }
 }
 
+// handleFormSubmit(event){
+  //   event.preventDefault()
+  //
+  //   let unicornPayload = {
+    //     unicornName: this.state.unicornName
+    //   }
+    //
+    //   this.props.trackNewUnicorn(unicornPayload)
+    // }
+
+    // handleUnicornChange(event) {
+      //   this.setState({ unicornName: event.target.value })
+      // }
+// <TextField
+// content={this.state.unicornName}
+// unicornHandler={this.handleUnicornChange}
+// />
 export default UnicornFormContainer;
