@@ -4,7 +4,7 @@ const UnicornTile = (props) => {
 
   return(
     <li>
-      {props.unicorn.unicornName} | {props.unicorn.unicornAge}
+      {props.unicorn.unicornName}
     </li>
   )
 }

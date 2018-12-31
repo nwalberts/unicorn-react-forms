@@ -1,60 +1,52 @@
 import React, { Component } from 'react';
-import TextField from '../components/TextField';
+// import TextField from '../components/TextField';
 
 class UnicornFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       unicornName: '',
-      unicornAge: ''
     }
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleUnicornChange = this.handleUnicornChange.bind(this);
-    this.handleUnicornAge = this.handleUnicornAge.bind(this);
+    // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    // this.handleUnicornChange = this.handleUnicornChange.bind(this);
   }
-
-  handleUnicornChange(event){
-    this.setState({ unicornName: event.target.value })
-  }
-
-  handleUnicornAge(event){
-    this.setState({ unicornAge: event.target.value })
-  }
-  
-  handleFormSubmit(event){
-    event.preventDefault()
-
-    let unicornPayload = {
-        unicornName: this.state.unicornName,
-        unicornAge: this.state.unicornAge
-      }
-    //
-      this.props.trackNewUnicorn(unicornPayload)
-  }
-
-
-
 
 
   render() {
-    console.log(this.state)
+
     return (
       <div>
-        <form className="callout" onSubmit={this.handleFormSubmit}>
-          <TextField
-            content={this.state.unicornName}
-            handleChange={this.handleUnicornChange}
+        <form className="callout" >
+          <input
+            type="text"
+            name="unicornName"
+            // value=""
           />
-          <TextField
-            content={this.state.unicornAge}
-            handleChange={this.handleUnicornAge}
-          />
+          <div className="button-group">
+            <input className="button" type="submit" value="Submit" />
+          </div>
 
-          <input className="button" type="submit" value="Submit" />
         </form>
       </div>
     );
   }
 }
 
+// handleFormSubmit(event){
+  //   event.preventDefault()
+  //
+  //   let unicornPayload = {
+    //     unicornName: this.state.unicornName
+    //   }
+    //
+    //   this.props.trackNewUnicorn(unicornPayload)
+    // }
+
+    // handleUnicornChange(event) {
+      //   this.setState({ unicornName: event.target.value })
+      // }
+// <TextField
+// content={this.state.unicornName}
+// unicornHandler={this.handleUnicornChange}
+// />
 export default UnicornFormContainer;

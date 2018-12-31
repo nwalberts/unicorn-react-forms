@@ -2,8 +2,7 @@ import React from 'react';
 
 import UnicornTile from "./UnicornTile"
 
-const UnicornsList = (props) => {
-  // debugger;
+const UnicornMealsList = (props) => {
   let unicornArray = props.unicorns.map((unicorn) => {
 
     return(
@@ -20,4 +19,4 @@ const UnicornsList = (props) => {
   )
 }
 
-export default UnicornsList;
+export default UnicornMealsList;
