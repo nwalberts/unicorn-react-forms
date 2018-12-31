@@ -8,13 +8,6 @@ class App extends Component {
     this.state = {
       unicorns: []
     }
-    this.trackNewUnicorn = this.trackNewUnicorn.bind(this);
-  }
-
-  trackNewUnicorn(unicorn){
-    // debugger;
-    let allUnicorns = this.state.unicorns
-    this.setState({ unicorns: allUnicorns.concat(unicorn) })
   }
 
   render() {
@@ -23,10 +16,8 @@ class App extends Component {
         <div className="small-9 small-centered columns">
           <h1 className="text-center">Unicorn Tracker</h1>
           <UnicornFormContainer
-            trackNewUnicorn={this.trackNewUnicorn}
           />
           <UnicornsList
-            unicorns={this.state.unicorns}
           />
         </div>
       </div>
