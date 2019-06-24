@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import UnicornFormContainer from './UnicornFormContainer';
+
+import UnicornFormContainer from './UnicornFormContainer';
 import UnicornsList from '../components/UnicornsList';
 
 class App extends Component {
@@ -7,21 +8,35 @@ class App extends Component {
     super(props);
     this.state = {
       unicorns: [
-        {unicornName: "Charlie the Unicorn" }
+        {unicornName: "Charlie the Unicorn", hornLength: "1 foot" },
+        {unicornName: "Princess Celestia", hornLength: "2 feet" }
       ]
     }
+    this.trackNewUnicorn = this.trackNewUnicorn.bind(this);
+  }
+
+  trackNewUnicorn(newUnicornObject){
+    let newUnicornArray = this.state.unicorns.concat(newUnicornObject)
+
+    this.setState({ unicorns: newUnicornArray })
   }
 
 
   render() {
+    // debugger
     return (
       <div className="row">
         <div className="small-9 small-centered columns">
           <h1 className="text-center">Unicorn Tracker</h1>
 
+          <UnicornFormContainer
+            trackNewUnicorn={this.trackNewUnicorn}
+          />
+
           <UnicornsList
             unicorns={this.state.unicorns}
           />
+
         </div>
       </div>
     );
@@ -29,12 +44,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-// this.trackNewUnicorn = this.trackNewUnicorn.bind(this);
-// trackNewUnicorn(unicorn){
-  //   // debugger;
-  //   let allUnicorns = this.state.unicorns
-  //   this.setState({ unicorns: allUnicorns.concat(unicorn) })
-  // }
